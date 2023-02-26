@@ -1,0 +1,60 @@
+﻿@model IEnumerable<School.Models.PersonGradeModel>
+
+@{
+    ViewData["Title"] = "ShowGradesSum";
+}
+
+<h1>ShowGradesSum</h1>
+
+<p>
+    <a asp-action="AddStudent">Add new student</a>
+    <a asp-action="AddGrade">Add a grade</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+@*            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
